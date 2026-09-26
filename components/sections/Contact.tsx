@@ -3,7 +3,7 @@ import { business, maps } from "@/lib/business";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { ArrowRightIcon, ClockIcon, PhoneIcon, PinIcon } from "@/components/icons";
-import contactImage from "@/public/images/contact.jpg";
+import contactImage from "@/public/images/crs/IMG_20260926_171734.jpg";
 
 export function Contact() {
   return (
@@ -11,8 +11,7 @@ export function Contact() {
       {/* Atmosphere */}
       <Image
         src={contactImage}
-        alt=""
-        aria-hidden="true"
+        alt="The front of CRS Auto Repair, with the blue service canopy and vehicles in the bays"
         fill
         sizes="100vw"
         placeholder="blur"

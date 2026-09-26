@@ -49,10 +49,10 @@ export const metadata: Metadata = {
       "Local auto repair in San Gabriel, CA. 1901 Del Mar Ave — call (626) 573-3922 for automotive repair and maintenance.",
     images: [
       {
-        url: "/images/hero.jpg",
-        width: 1536,
-        height: 1024,
-        alt: "A vehicle on a lift inside a professional automotive service bay",
+        url: "/images/crs/IMG_20260926_171641.jpg",
+        width: 720,
+        height: 546,
+        alt: "Exterior of CRS Auto Repair, with the red sign and blue service canopy",
       },
     ],
   },
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: "CRS Auto Repair | Auto Repair in San Gabriel, CA",
     description:
       "Local auto repair in San Gabriel, CA. 1901 Del Mar Ave — call (626) 573-3922 for automotive repair and maintenance.",
-    images: ["/images/hero.jpg"],
+    images: ["/images/crs/IMG_20260926_171641.jpg"],
   },
   robots: { index: true, follow: true },
   formatDetection: { telephone: true, address: true },

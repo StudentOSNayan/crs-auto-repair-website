@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { SVGProps } from "react";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -9,6 +10,7 @@ import {
   GaugeIcon,
   ToolIcon,
 } from "@/components/icons";
+import serviceImage from "@/public/images/crs/IMG_20260926_171816.jpg";
 
 /**
  * DEMO SERVICE CATEGORIES — not verified with CRS Auto Repair.
@@ -58,19 +60,38 @@ export function Services() {
   return (
     <section id="services" className="section-y bg-bone-bright text-ink">
       <div className="page">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <SectionHeading
-            tone="light"
-            eyebrow="Services"
-            title="Auto Care, Made Simple."
-            description="Clear, professional automotive service for everyday vehicle needs."
-          />
+        <div className="grid gap-10 lg:grid-cols-[1fr_minmax(0,24rem)] lg:items-end lg:gap-16">
+          <div>
+            <SectionHeading
+              tone="light"
+              eyebrow="Services"
+              title="Auto Care, Made Simple."
+              description="Clear, professional automotive service for everyday vehicle needs."
+            />
+            <Reveal delay={80}>
+              <p className="mt-7 inline-flex items-center gap-2 rounded-full border border-ink/12 bg-ink/[0.03] px-4 py-2 text-xs font-medium text-muted">
+                <span className="bg-accent/70 size-1.5 rounded-full" aria-hidden="true" />
+                Demo categories — pending owner confirmation
+              </p>
+            </Reveal>
+          </div>
 
-          <Reveal delay={100}>
-            <p className="inline-flex items-center gap-2 rounded-full border border-ink/12 bg-ink/[0.03] px-4 py-2 text-xs font-medium text-muted">
-              <span className="bg-accent/70 size-1.5 rounded-full" aria-hidden="true" />
-              Demo categories — pending owner confirmation
-            </p>
+          <Reveal delay={100} className="lg:order-first lg:justify-self-end">
+            <div className="relative overflow-hidden rounded-2xl shadow-[0_30px_60px_-45px_rgba(20,21,26,0.6)]">
+              <Image
+                src={serviceImage}
+                alt="Close-up of a Toyota engine bay being inspected, a hand pointing at a component"
+                fill
+                sizes="(max-width: 1024px) 100vw, 24rem"
+                placeholder="blur"
+                loading="lazy"
+                className="aspect-[16/10] w-full object-cover object-[center_38%] sm:aspect-[4/3] lg:aspect-[4/5]"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 ring-1 ring-inset ring-ink/10"
+              />
+            </div>
           </Reveal>
         </div>
 

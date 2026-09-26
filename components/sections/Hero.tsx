@@ -2,39 +2,34 @@ import Image from "next/image";
 import { business, maps } from "@/lib/business";
 import { Button } from "@/components/ui/Button";
 import { PinIcon, PhoneIcon } from "@/components/icons";
-import heroImage from "@/public/images/hero.jpg";
+import heroImage from "@/public/images/crs/IMG_20260926_171748.jpg";
 
 export function Hero() {
   return (
-    <section
-      id="home"
-      className="relative isolate bg-obsidian md:flex md:min-h-[92svh] md:items-center"
-    >
-      {/* Image: a bounded block on mobile, full-bleed cinematic frame on desktop */}
-      <div className="relative h-[44svh] min-h-[260px] w-full md:absolute md:inset-0 md:h-full">
-        <Image
-          src={heroImage}
-          alt="A vehicle on a lift inside a clean, well-lit automotive service bay"
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          placeholder="blur"
-          className="object-cover object-center"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/45 to-obsidian/65 md:bg-gradient-to-r md:from-obsidian md:via-obsidian/75 md:to-obsidian/10"
-        />
-        {/* Extra scrim so the fixed header always stays legible on wide screens. */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 hidden h-40 bg-gradient-to-b from-obsidian/80 to-transparent md:block"
-        />
-      </div>
+    <section id="home" className="relative isolate bg-obsidian">
+      <div className="page relative grid gap-8 pt-24 pb-14 sm:gap-10 lg:min-h-[92svh] lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:py-28">
+        {/* Photo — real storefront at golden hour */}
+        <div className="order-1 lg:order-2">
+          <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-[0_40px_80px_-60px_rgba(0,0,0,0.9)]">
+            <Image
+              src={heroImage}
+              alt="CRS Auto Repair at sunset, red sign above the blue service canopy on Del Mar Avenue in San Gabriel"
+              fill
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 1024px) 100vw, 46vw"
+              placeholder="blur"
+              className="aspect-[16/9] w-full object-cover object-[center_32%] lg:aspect-[4/5]"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-obsidian/70 to-transparent"
+            />
+          </div>
+        </div>
 
-      <div className="page relative z-10 -mt-20 pb-20 md:mt-0 md:py-28">
-        <div className="max-w-2xl">
+        {/* Copy */}
+        <div className="order-2 max-w-2xl lg:order-1">
           <p className="text-eyebrow flex items-center gap-3 text-white/60">
             <span className="bg-accent h-px w-8" aria-hidden="true" />
             {business.wordmark}

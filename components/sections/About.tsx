@@ -3,7 +3,7 @@ import { business, maps } from "@/lib/business";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { PinIcon } from "@/components/icons";
-import aboutImage from "@/public/images/about.jpg";
+import aboutImage from "@/public/images/crs/IMG_20260926_171334.jpg";
 
 export function About() {
   return (
@@ -36,13 +36,13 @@ export function About() {
           <div className="relative overflow-hidden rounded-2xl">
             <Image
               src={aboutImage}
-              alt="A technician working in a professionally equipped automotive service bay"
-              width={1400}
-              height={934}
+              alt="A technician inspecting a vehicle raised on a lift in the service bay while a customer watches"
+              width={720}
+              height={529}
               sizes="(max-width: 1024px) 100vw, 50vw"
               placeholder="blur"
               loading="lazy"
-              className="aspect-[4/3] w-full object-cover sm:aspect-[16/10] lg:aspect-[4/3]"
+              className="aspect-[4/3] w-full object-cover object-center sm:aspect-[4/3] lg:aspect-[4/3]"
             />
             <div
               aria-hidden="true"

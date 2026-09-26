@@ -73,7 +73,7 @@ lib/
   business.ts           All verified business facts + placeholder copy  ← edit first
   schema.ts             LocalBusiness / AutoRepair structured data
   nav.ts  cn.ts
-public/images/          Replaceable photography
+public/images/crs/      Real business photos (provided reference imagery)
 ```
 
 ---
@@ -98,8 +98,13 @@ component — the hero, FAQ, footer, contact block and JSON-LD all read from tha
 | ---------------- | ------------------------------------------------------------------------------- |
 | Services         | Demo categories with a “pending owner confirmation” label and category-level copy |
 | Reviews          | Clearly marked sample cards. **No reviews are fabricated and no names invented.** |
-| Gallery          | Generic automotive photography, captioned as concept imagery                      |
 | FAQ (unverified) | Answers fall back to `UNVERIFIED_ANSWER`                                          |
+
+**Photography** — the site uses only the real business photographs supplied in this
+repository under `public/images/crs/` (storefront, service bays, work in progress,
+street location). No AI-generated, stock or placeholder imagery is used anywhere on the
+site. `IMG_20260414_160156.jpg` was not used: on inspection it is a personal photo
+unrelated to the shop. Unused reference shots are kept in the folder for future use.
 
 Do **not** add certifications, years in business, warranties, guarantees, staff names,
 pricing or turnaround claims until the owner confirms them.
@@ -110,8 +115,10 @@ pricing or turnaround claims until the owner confirms them.
    remove the “Demo categories — pending owner confirmation” pill.
 2. **Reviews** — replace the `placeholders` array in `components/sections/Reviews.tsx`
    with verified review text (only with permission to publish).
-3. **Photos** — drop files into `public/images/` and update the imports + `alt` text in
-   `Hero.tsx`, `About.tsx`, `Gallery.tsx`, `Contact.tsx`. The layouts need no changes.
+3. **Photos** — real shop photos live in `public/images/crs/`. To swap one, replace the
+   import + `alt` text in `Hero.tsx`, `About.tsx`, `Services.tsx`, `Gallery.tsx` or
+   `Contact.tsx`. Each gallery tile uses the photo's own aspect ratio, so most swaps
+   need no layout change.
 4. **Hours / phone / address** — edit `lib/business.ts` only.
 5. **Logo** — replace `<Wordmark />` (`components/ui/Wordmark.tsx`) with the owner's file.
 
@@ -133,7 +140,8 @@ Every page is statically rendered; `npm run build` produces no server-only route
 ## Performance notes
 
 * Hero image is `priority` + `fetchPriority="high"`; every other image is lazy-loaded.
-* All images are served through `next/image` with responsive `sizes` and blur placeholders.
+* All images are served through `next/image` with responsive `sizes`, blur placeholders
+  and the photos' native aspect ratios (no gratuitous cropping).
 * One self-hosted variable font file (~25 KB, `font-display: swap`) — no third-party
   font connection.
 * Client JS is limited to the header (scroll-spy + menu), FAQ accordion and the
