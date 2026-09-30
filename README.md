@@ -158,3 +158,4 @@ Every page is statically rendered; `npm run build` produces no server-only route
   background scroll is locked, closed menu is removed from the tab order.
 * Tap targets ≥ 44 px; the Call / Directions bar is fixed on mobile.
 * Text contrast meets WCAG AA on both the light and dark surfaces.
+* Deployment configuration updated for Vercel.
